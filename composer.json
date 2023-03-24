@@ -14,7 +14,11 @@
             "email": "warren5236@gmail.com"
         }
     ],
+    "require": {
+        "php": ">8.0"
+    },
     "require-dev": {
+        "doctrine/instantiator": "^1",
         "phpunit/phpunit": "^9"
     }
 }

@@ -1,3 +1,4 @@
+<?php
 // make sure we have all three arguments 
 if ($argc != 3) {
     echo "Usage: " . $argv[0] . " <coverage.xml> <threshold>";

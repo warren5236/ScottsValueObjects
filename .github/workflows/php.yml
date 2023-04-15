@@ -1,4 +1,4 @@
-name: PHP Unit
+name: PHP Checks
 
 on:
   push:

@@ -14,4 +14,9 @@ class LastName
     {
         return strlen($this->value);
     }
+
+    public function isEmpty(): bool
+    {
+        return strlen($this->value) == 0;
+    }
 }

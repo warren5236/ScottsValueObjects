@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [ "main" ]
  
+permissions:
+  contents: write
+
 jobs:
   rector:
     runs-on: ubuntu-latest

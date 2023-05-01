@@ -10,4 +10,8 @@ class FirstNameTest extends TestCase
     {
         $this->assertNotNull(new FirstName("Name"));
     }
+    public function testLengthReturnsFourForName(): void
+    {
+        $this->assertEquals(4, (new FirstName("Name"))->length());
+    }
 }

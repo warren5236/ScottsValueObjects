@@ -10,4 +10,9 @@ class LastNameTest extends TestCase
     {
         $this->assertNotNull(new LastName("Name"));
     }
+
+    public function testIsEmptyReturnsFalseWithString(): void
+    {
+        $this->assertFalse((new LastName("Name"))->isEmpty());
+    }
 }

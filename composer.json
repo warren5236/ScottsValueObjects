@@ -21,7 +21,8 @@
         "doctrine/instantiator": "^1",
         "phpunit/phpunit": "^9",
         "squizlabs/php_codesniffer": "*",
-        "slevomat/coding-standard": "^8.8"
+        "slevomat/coding-standard": "^8.8",
+        "rector/rector": "^0.15.25"
     },
     "config": {
         "allow-plugins": {

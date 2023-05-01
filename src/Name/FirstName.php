@@ -3,11 +3,8 @@ namespace ScottsValueObjects\Name;
 
 class FirstName
 {
-    protected string $value;
-
-    public function __construct(string $value)
+    public function __construct(protected string $value)
     {
-        $this->value = $value;
     }
 
     public function length(): int

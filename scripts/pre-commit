@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+function __runStaticTool() #(name, command)
+{
+    echo -e "\n\n$1"
+    output=$(eval "$2" 2>&1)
+    exitcode=$?
+
+    if [[ 0 == $exitcode || 130 == $exitcode ]]; then
+        echo -e "Success"
+    else
+        echo -e "Failure\n\n$output"
+        exit 1
+    fi
+}
+
+modified="git diff --diff-filter=AM --name-only --cached src tests | grep \".php$\""
+ignore="resources/lang,resources/views,bootstrap/helpers,database/migrations,bin"
+
+__runStaticTool "PHP_CodeSniffer" "${modified} | xargs vendor/bin/phpcs --standard=PSR12 --ignore=${ignore}"

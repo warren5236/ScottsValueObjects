@@ -1,4 +1,5 @@
 <?php
+
 namespace Tests\Name;
 
 use ScottsValueObjects\Name\LastName;

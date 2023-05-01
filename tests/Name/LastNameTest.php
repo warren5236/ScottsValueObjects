@@ -1,8 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Tests\Name;
 
-use ScottsValueObjects\Name\LastName;
 use PHPUnit\Framework\TestCase;
+use ScottsValueObjects\Name\LastName;
 
 class LastNameTest extends TestCase
 {

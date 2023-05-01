@@ -28,5 +28,11 @@
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cp ./scripts/pre-commit .git/hooks/",
+            "chmod +x .git/hooks/pre-commit"
+        ]
     }
 }

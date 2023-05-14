@@ -17,4 +17,7 @@ function __runStaticTool() #(name, command)
 modified="git diff --diff-filter=AM --name-only --cached src tests | grep \".php$\""
 ignore="resources/lang,resources/views,bootstrap/helpers,database/migrations,bin"
 
+__runStaticTool "Lint" "${modified} | xargs vendor/bin/parallel-lint"
 __runStaticTool "PHP_CodeSniffer" "${modified} | xargs vendor/bin/phpcs --standard=phpcs.xml --ignore=${ignore}"
+__runStaticTool "phpstan" "${modified} | xargs vendor/bin/phpstan analyze"
+__runStaticTool "rector" "${modified} | xargs vendor/bin/rector process --dry-run "

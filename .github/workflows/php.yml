@@ -43,12 +43,12 @@ jobs:
     - name: Run Checks
       run: ./vendor/bin/parallel-lint src tests
   phpcs:
-
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['8.0', '8.1', '8.2', '8.3']
+        php-versions: ['8.0', '8.1', '8.2', '8.3', '8.4']
     
     steps:
     - uses: actions/checkout@v3
@@ -75,13 +75,12 @@ jobs:
     - name: Run Checks
       run: ./vendor/bin/phpcs --standard=phpcs.xml src tests
   phpunit:
-
     runs-on: ubuntu-latest
+    needs: phpcs
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['8.0', '8.1', '8.2', '8.3']
-    
+        php-versions: ['8.0', '8.1', '8.2', '8.3', '8.4']
     steps:
     - uses: actions/checkout@v3
 
@@ -126,7 +125,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['8.0', '8.1', '8.2', '8.3']
+        php-versions: ['8.0', '8.1', '8.2', '8.3', '8.4']
     
     steps:
     - uses: actions/checkout@v3

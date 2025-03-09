@@ -19,7 +19,7 @@
     },
     "require-dev": {
         "doctrine/instantiator": "^1",
-        "phpunit/phpunit": "^9",
+        "phpunit/phpunit": "^12",
         "squizlabs/php_codesniffer": "*",
         "slevomat/coding-standard": "^8.8",
         "rector/rector": "^0.15.25",

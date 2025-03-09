@@ -107,6 +107,7 @@ jobs:
       uses: php-actions/phpunit@v3
       env:
         XDEBUG_MODE: coverage
+        version: 9
       with:
         bootstrap: vendor/autoload.php
         configuration: phpunit.xml

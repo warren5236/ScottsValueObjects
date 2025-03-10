@@ -11,24 +11,24 @@ use ScottsValueObjects\Location\City;
 
 #[CoversClass(City::class)]
 #[UsesClass(City::class)]
-class CityTest extends TestCase
+final class CityTest extends TestCase
 {
     public function testBlankStringCausesIsEmptyToReturnTrue(): void
     {
-        $item = new City("");
-        $this->assertTrue($item->isEmpty());
+        $city = new City("");
+        $this->assertTrue($city->isEmpty());
     }
 
     public function testAStringCausesIsEmptyToReturnFalse(): void
     {
-        $item = new City("Saginaw");
-        $this->assertFalse($item->isEmpty());
+        $city = new City("Saginaw");
+        $this->assertFalse($city->isEmpty());
     }
 
     // in CityTest.php
     public function testBlankStringCausesIsNotEmptyToReturnFalse(): void
     {
-        $item = new City("");
-        $this->assertFalse($item->isNotEmpty());
+        $city = new City("");
+        $this->assertFalse($city->isNotEmpty());
     }
 }

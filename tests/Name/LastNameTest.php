@@ -11,11 +11,11 @@ use ScottsValueObjects\Name\LastName;
 
 #[CoversClass(LastName::class)]
 #[UsesClass(LastName::class)]
-class LastNameTest extends TestCase
+final class LastNameTest extends TestCase
 {
     public function testCanInitialize(): void
     {
-        $this->assertNotNull(new LastName("Name"));
+        $this->assertEquals("Name", (new LastName("Name"))->getValue());
     }
 
     public function testLengthReturnsFourForName(): void

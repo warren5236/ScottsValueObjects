@@ -19,4 +19,9 @@ class LastName
     {
         return strlen($this->value) == 0;
     }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
 }

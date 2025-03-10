@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace Tests\Name;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use ScottsValueObjects\Location\City;
 
+#[CoversClass(City::class)]
+#[UsesClass(City::class)]
 class CityTest extends TestCase
 {
     public function testBlankStringCausesIsEmptyToReturnTrue(): void

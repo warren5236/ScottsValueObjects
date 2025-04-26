@@ -20,3 +20,12 @@ phpcbf:
 
 phpstan:
 	vendor/bin/phpstan analyze  --memory-limit 1G -l9 src tests
+
+## Helpers
+back-to-trunk:
+	git checkout main
+	git pull
+
+update-atomic-commit:
+	git commit -a --amend
+	git push --force-with-lease
